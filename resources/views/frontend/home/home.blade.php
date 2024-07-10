@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center zindex-1 HeroSection">
                     <div class="HeroHeadingDiv">
-                        <h1 class="mb-3 mainHeroHeader">Automate your Business<br>
+                        <h1 class="mb-3 mainHeroHeader">Hello, Automate your Business<br>
                             Automated, User-Friendly Tech.</h1>
                         <p class="mb-4 mainHraderP">Empower your business with seamless automation and intuitive user interfaces, driving efficiency and satisfaction.</p>
                         <a href="#" class="btn btn-secondary w-50 mainHeaderbtn">Our Projects <i class="fa-solid fa-arrow-right-long"></i></a>
