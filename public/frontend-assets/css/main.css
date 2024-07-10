@@ -1,0 +1,120 @@
+.mobileButton{
+    border-radius: 30px !important;
+}
+.HeroSection {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.hero-section {
+    background-color: currentColor;
+    padding-bottom: 150px;
+    margin-bottom: 0px;
+}
+.mainHeroHeader{
+    text-align: left ;
+    font-size: 42px ;
+}
+.mainHraderP{
+    text-align: left !important;
+}
+.HeroImageDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HeroHeadingDiv{
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.serviceAncor{
+    color: #5CE1E6 !important;
+    transition: all ease 0.4s;
+}
+.serviceAncor:hover i{
+    margin-left: 20px ;
+    transition: all ease 0.4s;
+}
+.feature-icon{
+    background: #5CE1E6;
+}
+.mainHeaderbtn{
+    border-radius: 50px;
+}
+.mainHeaderbtn:hover i{
+    margin-left: 20px ;
+    transition: all ease 0.4s;
+}
+.nav-link:hover{
+    color: #5CE1E6 !important;
+}
+
+@media (min-width: 767px) {
+    .normalHeader{
+        box-shadow: 0 0 10px lightskyblue;
+        border-radius: 50px;
+        margin-top: 20px;
+    }
+    .nav-bg .normalHeader{
+        box-shadow: none !important;
+        border-radius: 0px !important;
+        margin-top: 0px !important;
+    }
+    .nav-bg .normalHeader .navbar-brand img{
+        width: 60%;
+    }
+    .logosDiv{
+        width: 20% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-brand{
+        width: 80%;
+    }
+    .navbar-brand img{
+        width: 50%;
+    }
+    .nav-bg .normalHeader .navbar-brand img{
+        width: 35%;
+    }
+    .hero-section {
+        padding-top: 160px;
+        padding-bottom: 0px;
+    }
+    .navbar-light .navbar-toggler-icon {
+        background-image: url("/company/public/frontend-assets/images/menu.png") !important;
+        transform: rotate(-180deg);
+    }
+    .mainHeroHeader{
+        font-size: 40px;
+        text-align: center;
+    }
+    .section{
+        padding-top: 50px;
+    }
+    .HeroSection {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 50px;
+    }
+    .mainHraderP{
+        text-align: center !important;
+    }
+    .HeroHeadingDiv{
+        padding-right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+    .navbar-toggler{
+        background: azure;
+        padding: 10px;
+    }
+    .mainHeaderbtn{
+        padding: 15px 0px !important;
+    }
+}
