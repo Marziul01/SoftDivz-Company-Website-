@@ -17,52 +17,38 @@
                 </ul>
             </li>
             <li>
-                <a href="widgets.html" aria-expanded="false">
-                    <i class="icon-badge menu-icon"></i><span class="nav-text">Widget</span>
+                <a href="{{ route('services.index') }}" aria-expanded="false">
+                    <i class="icon-badge menu-icon"></i><span class="nav-text">Services</span>
                 </a>
             </li>
-            <li class="nav-label">Forms</li>
+            <li>
+                <a href="{{ route('testimonials.index') }}" aria-expanded="false">
+                    <i class="icon-badge menu-icon"></i><span class="nav-text">Testimonials</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('pricings.index') }}" aria-expanded="false">
+                    <i class="icon-badge menu-icon"></i><span class="nav-text">Pricings</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('clients.index') }}" aria-expanded="false">
+                    <i class="icon-badge menu-icon"></i><span class="nav-text">Clients</span>
+                </a>
+            </li>
             <li>
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
+                    <i class="icon-grid menu-icon"></i><span class="nav-text">Hirings</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="./form-basic.html">Basic Form</a></li>
-                    <li><a href="./form-validation.html">Form Validation</a></li>
-                    <li><a href="./form-step.html">Step Form</a></li>
-                    <li><a href="./form-editor.html">Editor</a></li>
-                    <li><a href="./form-picker.html">Picker</a></li>
+                    <li><a href="{{ route('admin.plans') }}">Bought Plans</a></li>
+                    <li><a href="{{ route('admin.hire') }}">Filled Hire Form</a></li>
                 </ul>
             </li>
-            <li class="nav-label">Table</li>
             <li>
-                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
+                <a href="{{ route('siteSettings') }}" aria-expanded="false">
+                    <i class="icon-badge menu-icon"></i><span class="nav-text">Site Settings</span>
                 </a>
-                <ul aria-expanded="false">
-                    <li><a href="./table-basic.html" aria-expanded="false">Basic Table</a></li>
-                    <li><a href="./table-datatable.html" aria-expanded="false">Data Table</a></li>
-                </ul>
-            </li>
-            <li class="nav-label">Pages</li>
-            <li>
-                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="./page-login.html">Login</a></li>
-                    <li><a href="./page-register.html">Register</a></li>
-                    <li><a href="./page-lock.html">Lock Screen</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                        <ul aria-expanded="false">
-                            <li><a href="./page-error-404.html">Error 404</a></li>
-                            <li><a href="./page-error-403.html">Error 403</a></li>
-                            <li><a href="./page-error-400.html">Error 400</a></li>
-                            <li><a href="./page-error-500.html">Error 500</a></li>
-                            <li><a href="./page-error-503.html">Error 503</a></li>
-                        </ul>
-                    </li>
-                </ul>
             </li>
         </ul>
     </div>

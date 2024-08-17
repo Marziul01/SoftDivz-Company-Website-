@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Dtox</title>
+    <title>{{ $siteSettings->site_title }} @yield('title')</title>
 
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,14 +25,13 @@
     <!-- aos -->
     <link rel="stylesheet" href="{{ asset('frontend-assets') }}/plugins/aos/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Main Stylesheet -->
     <link href="{{ asset('frontend-assets') }}/css/style.css" rel="stylesheet">
     <link href="{{ asset('frontend-assets') }}/css/main.css" rel="stylesheet">
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="{{ asset('frontend-assets') }}/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="{{ asset('frontend-assets') }}/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset($siteSettings->favicon) }}" type="image/x-icon">
 
 </head>
 
@@ -55,6 +54,7 @@
 <script src="{{ asset('frontend-assets') }}/plugins/aos/aos.js"></script>
 <!-- Main Script -->
 <script src="{{ asset('frontend-assets') }}/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 @yield('customJs')
 

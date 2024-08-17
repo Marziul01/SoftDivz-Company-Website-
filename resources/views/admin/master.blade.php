@@ -9,9 +9,9 @@
     <!-- theme meta -->
     <meta name="theme-name" content="quixlab" />
 
-    <title>SoftDivz | @yield('title')</title>
+    <title>{{ $siteSettings->site_title }} | @yield('title')</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin-assets') }}/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset($siteSettings->favicon) }}">
     <!-- Pignose Calender -->
     <link href="{{ asset('admin-assets') }}/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
     <!-- Chartist -->
@@ -53,11 +53,11 @@
     ***********************************-->
     <div class="nav-header">
         <div class="brand-logo">
-            <a href="{{ route('home') }}" target="_blank">
-                <b class="logo-abbr"><img src="{{ asset('admin-assets') }}/images/logo.png" alt=""> </b>
-                <span class="logo-compact"><img src="{{ asset('admin-assets') }}/images/logo-compact.png" alt=""></span>
+            <a href="{{ route('home') }}" target="_blank" class="text-center">
+                <b class="logo-abbr"><img src="{{ asset($siteSettings->logo) }}" alt=""> </b>
+                <span class="logo-compact"><img src="{{ asset($siteSettings->logo) }}" alt=""></span>
                 <span class="brand-title">
-                        <img src="{{ asset('admin-assets') }}/images/logo-text.png" alt="">
+                        <img src="{{ asset($siteSettings->logo) }}" alt="" width="65%" style="margin-top: -15px;">
                     </span>
             </a>
         </div>

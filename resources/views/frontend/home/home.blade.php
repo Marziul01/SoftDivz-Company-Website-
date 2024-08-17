@@ -1,5 +1,8 @@
 @extends('frontend.master')
 
+@section('title')
+
+@endsection
 
 @section('content')
 
@@ -9,9 +12,9 @@
             <div class="row">
                 <div class="col-lg-12 text-center zindex-1 HeroSection">
                     <div class="HeroHeadingDiv">
-                        <h1 class="mb-3 mainHeroHeader">Hello, Automate your Business<br>
-                            Automated, User-Friendly Tech.</h1>
-                        <p class="mb-4 mainHraderP">Empower your business with seamless automation and intuitive user interfaces, driving efficiency and satisfaction.</p>
+                        <h1 class="mb-3 mainHeroHeader">Empower Your Business with Innovative Software, Stunning Websites, and Reliable Maintenance!
+                            </h1>
+                        <p class="mb-4 mainHraderP"> At SoftDivz we automate your operations and fuel your growth, ensuring you stay ahead in the competitive market. Let us transform your business with innovative solutions designed for success!"</p>
                         <a href="#" class="btn btn-secondary w-50 mainHeaderbtn">Our Projects <i class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
                     <div class="HeroImageDiv">
@@ -39,62 +42,34 @@
     <section class="section feature mb-0" id="feature">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-title">Our Services</h2>
-                    <p class="mb-100">We provide a wide range of best-in-class services aimed at automating and enhancing user experiences for businesses.<br>We are here to support you 24/7</p>
-                </div>
-                <!-- feature item -->
-                <div class="col-md-6 mb-80">
-                    <div class="d-flex feature-item">
-                        <div>
-                            <i class="fa-solid fa-laptop-code feature-icon mr-4"></i>
-                        </div>
-                        <div>
-                            <h4>Software Development</h4>
-                            <p>We create high-quality, bespoke software solutions tailored to your business needs. Our team ensures every product is intuitive, efficient, and scalable.</p>
-                            <a class="serviceAncor">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
+                <div class="col-lg-12 d-flex justify-content-between">
+                    <div class="w-70">
+                        <h2 class="section-title">Our Services</h2>
+                        <p class="mb-20">We provide a wide range of best-in-class services aimed at automating and enhancing user experiences for businesses.<br>We are here to support you 24/7</p>
+                        <a class="btn btn-sm btn-primary mb-30" > View All <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                    <div class="w-30">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
                 </div>
                 <!-- feature item -->
-                <div class="col-md-6 mb-80">
-                    <div class="d-flex feature-item">
-                        <div>
-                            <i class="fa-solid fa-globe feature-icon mr-4"></i>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        @foreach ($services as $service)
+                        <div class="swiper-slide">
+                            <div>
+                                <div style="color:#42e0e1; font-size: 30px">{!! $service->icon !!}</div>
+                                <h4 class="text-left">{{ $service->title }}</h4>
+                                <p class="text-left">{{ $service->short_desc }}</p>
+                                <a class="text-white"> Read More <i class="fa-solid fa-caret-right"></i></a>
+                            </div>
                         </div>
-                        <div>
-                            <h4>Web Development</h4>
-                            <p>Our web development services offer highly customizable and responsive websites. We build sites that not only look great but also perform flawlessly on all devices.</p>
-                            <a class="serviceAncor">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-                <!-- feature item -->
-                <div class="col-md-6 mb-80">
-                    <div class="d-flex feature-item">
-                        <div>
-                            <i class="fa-brands fa-artstation feature-icon mr-4"></i>
-                        </div>
-                        <div>
-                            <h4>Graphics Design</h4>
-                            <p>Our expert graphic designers deliver stunning visuals that captivate your audience. From logos to complete brand identities, we bring your vision to life with creativity and precision.</p>
-                            <a class="serviceAncor">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- feature item -->
-                <div class="col-md-6 mb-80">
-                    <div class="d-flex feature-item">
-                        <div>
-                            <i class="ti-layers-alt feature-icon mr-4"></i>
-                        </div>
-                        <div>
-                            <h4>Maintenance and Support</h4>
-                            <p>We provide ongoing maintenance and support to keep your websites and software running smoothly. Our services include regular updates, bug fixes, and performance optimization to ensure maximum uptime and efficiency.</p>
-                            <a class="serviceAncor">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
         <img class="feature-bg-1 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/feature-bg-1.png" alt="bg-shape">
@@ -109,89 +84,37 @@
                 <div class="col-md-6">
                     <div class="seo-image">
                         <div class="team-slider">
-                            <!-- team-member -->
-                            <div class="team-member">
-                                <div class="d-flex mb-4">
-                                    <div class="mr-3">
-                                        <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-1.jpg" alt="team-member">
+                            @foreach ($softwares as $software)
+                            <div class="team-member d-flex jusitfy-content-center align-items-center">
+                                <div class="d-flex flex-column jusitfy-content-center align-items-center softwareProject">
+                                    <div class="d-flex">
+                                        <div class="d-flex flex-column justify-content-center align-items-center">
+                                            <img class="rounded-circle img-fluid" src="{{ asset($software->image) }}" alt="team-member">
+                                            <h6 class="text-center text-white">{{ $software->name }}</h6>
+                                        </div>
                                     </div>
-                                    <div class="align-self-center">
-                                        <h4>Becroft</h4>
-                                        <h6 class="text-color">web designer</h6>
-                                    </div>
+                                    <p class="text-center">{{ $software->desc }}</p>
+                                    @if ($software->status == 1)
+                                        <a href="{{ $software->site_link }}" target="_blank" class="text-white btn btn-sm projectBtn">Visit Demo <i class="fa-solid fa-angle-right"></i></a>
+                                    @else
+                                        <a href="{{ $software->site_link }}" class="text-white btn btn-sm projectBtn">Ongoing <i class="fa-solid fa-gears"></i></a>
+                                    @endif
                                 </div>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
                             </div>
-                            <!-- team-member -->
-                            <div class="team-member">
-                                <div class="d-flex mb-4">
-                                    <div class="mr-3">
-                                        <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-2.jpg" alt="team-member">
-                                    </div>
-                                    <div class="align-self-center">
-                                        <h4>John Doe</h4>
-                                        <h6 class="text-color">web developer</h6>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-                            </div>
-                            <!-- team-member -->
-                            <div class="team-member">
-                                <div class="d-flex mb-4">
-                                    <div class="mr-3">
-                                        <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-3.jpg" alt="team-member">
-                                    </div>
-                                    <div class="align-self-center">
-                                        <h4>Erik Ligas</h4>
-                                        <h6 class="text-color">Programmer</h6>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                                    the blind texts. S eparated they</p>
-                            </div>
-                            <!-- team-member -->
-                            <div class="team-member">
-                                <div class="d-flex mb-4">
-                                    <div class="mr-3">
-                                        <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-1.jpg" alt="team-member">
-                                    </div>
-                                    <div class="align-self-center">
-                                        <h4>Erik Ligas</h4>
-                                        <h6 class="text-color">Programmer</h6>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                                    the blind texts. S eparated they</p>
-                            </div>
-                            <!-- team-member -->
-                            <div class="team-member">
-                                <div class="d-flex mb-4">
-                                    <div class="mr-3">
-                                        <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-2.jpg" alt="team-member">
-                                    </div>
-                                    <div class="align-self-center">
-                                        <h4>John Doe</h4>
-                                        <h6 class="text-color">web developer</h6>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <h2 class="section-title">A Complete Range Of SEO Marketing Services!</h2>
-                    <p>Far far away, behind the word mountains, far
-                        from the countries Vokalia and Consonantia.<br>
-                        There live the blind texts. Separated they
-                        live in Bookmarksgrove right at the coast of
-                        the Semantics, a large language ocean.
+                    <h2 class="section-title">A Complete Range Of Our Software Projects!</h2>
+                    <p>
+                        Softdivz Software Projects delivers custom, innovative software solutions designed to meet your business needs. We specialize in creating robust and scalable software that drives success, ensuring every project is aligned with your goals. Trust Softdivz for top-tier software development.
                     </p>
                 </div>
             </div>
         </div>
         <!-- background image -->
-        <img class="img-fluid seo-bg" src="{{ asset('frontend-assets') }}/images/backgrounds/seo-bg.png" alt="seo-bg">
+        <img class="img-fluid seo-bg" src="{{ asset('frontend-assets') }}/images/backgrounds/seo-bg.png" alt="seo-bg" width="50%">
         <!-- background-shape -->
         <img class="seo-bg-shape-1 left-right-animation" src="{{ asset('frontend-assets') }}/images/background-shape/seo-ball-1.png" alt="bg-shape">
         <img class="seo-bg-shape-2 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/seo-half-cycle.png" alt="bg-shape">
@@ -204,25 +127,40 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-5 order-2 order-md-1">
-                    <h2 class="section-title">Powerful Layout From Top To Bottom</h2>
-                    <p class="mb-4">Far far away, behind the word mountains,
-                        far from the countries Vokalia and Consonantia,
-                        there live the blind texts. Separated they
-                        live in Bookmarksgrove right at the coast of the
-                        Semantics, a large language ocean.</p>
+                    <h2 class="section-title">Our Latest Laravel Websites</h2>
+                    <p class="mb-4">Softdivz Laravel Websites specializes in crafting dynamic, high-performance websites using Laravel. We build scalable, secure, and user-friendly sites tailored to your business needs, ensuring seamless functionality and a great user experience. Trust Softdivz for expert Laravel development.</p>
                     <ul class="pl-0 service-list">
-                        <li><i class="ti-layout-tab-window text-purple"></i>Responsive on any device</li>
-                        <li><i class="ti-layout-placeholder text-purple"></i>Very easy to customize</li>
-                        <li><i class="ti-support text-purple"></i>Effective support</li>
+                        <li class="text-white"><i class="ti-layout-tab-window text-purple"></i>Responsive on any device</li>
+                        <li class="text-white"><i class="ti-layout-placeholder text-purple"></i>Secure and Fast</li>
+                        <li class="text-white"><i class="ti-support text-purple"></i>Effective support</li>
                     </ul>
                 </div>
-                <div class="col-md-7 order-1 order-md-2">
-                    <img class="img-fluid layer-3" src="{{ asset('frontend-assets') }}/images/service/service.png" alt="service">
+                <div class="col-md-7 order-1 order-md-2">s
+                    <div class="team-slider">
+                        @foreach ($websites as $website)
+                        <div class="team-member d-flex jusitfy-content-center align-items-center">
+                            <div class="d-flex flex-column jusitfy-content-center align-items-center softwareProject">
+                                <div class="d-flex">
+                                    <div class="d-flex flex-column justify-content-center align-items-center">
+                                        <img class="rounded-circle img-fluid" src="{{ asset($website->image) }}" alt="team-member">
+                                        <h6 class="text-center text-white">{{ $website->name }}</h6>
+                                    </div>
+                                </div>
+                                <p class="text-center">{{ $website->desc }}</p>
+                                @if ($website->status == 1)
+                                    <a href="{{ $website->site_link }}" target="_blank" class="text-white btn btn-sm projectBtn">Visit Site <i class="fa-solid fa-angle-right"></i></a>
+                                @else
+                                    <a href="{{ $website->site_link }}" class="text-white btn btn-sm projectBtn">Ongoing <i class="fa-solid fa-gears"></i></a>
+                                @endif
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
         <!-- background image -->
-        <img class="img-fluid service-bg" src="{{ asset('frontend-assets') }}/images/backgrounds/service-bg.png" alt="service-bg">
+        <img class="img-fluid service-bg" src="{{ asset('frontend-assets') }}/images/backgrounds/service-bg.png" alt="service-bg" width="50%">
         <!-- background shapes -->
         <img class="service-bg-shape-1 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/service-half-cycle.png" alt="background-shape">
         <img class="service-bg-shape-2 left-right-animation" src="{{ asset('frontend-assets') }}/images/background-shape/feature-bg-2.png" alt="background-shape">
@@ -233,81 +171,36 @@
     <section class="section-lg team" id="team">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-title">Our Team</h2>
-                    <p class="mb-100">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu<br>
-                        fugiat nulla pariatur. Excepteur sint occaecat </p>
+                <div class="col-md-6">
+                    <div class="team-slider">
+                        @foreach ($wordpresss as $wordpress)
+                        <div class="team-member d-flex jusitfy-content-center align-items-center">
+                            <div class="d-flex flex-column jusitfy-content-center align-items-center softwareProject">
+                                <div class="d-flex">
+                                    <div class="d-flex flex-column justify-content-center align-items-center">
+                                        <img class="rounded-circle img-fluid" src="{{ asset($wordpress->image) }}" alt="team-member">
+                                        <h6 class="text-center text-white">{{ $wordpress->name }}</h6>
+                                    </div>
+                                </div>
+                                <p class="text-center">{{ $wordpress->desc }}</p>
+                                @if ($wordpress->status == 1)
+                                    <a href="{{ $wordpress->site_link }}" target="_blank" class="text-white btn btn-sm projectBtn">Visit Site <i class="fa-solid fa-angle-right"></i></a>
+                                @else
+                                    <a href="{{ $wordpress->site_link }}" class="text-white btn btn-sm projectBtn">Ongoing <i class="fa-solid fa-gears"></i></a>
+                                @endif
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
-            </div>
-            <div class="col-10 mx-auto">
-                <div class="team-slider">
-                    <!-- team-member -->
-                    <div class="team-member">
-                        <div class="d-flex mb-4">
-                            <div class="mr-3">
-                                <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-1.jpg" alt="team-member">
-                            </div>
-                            <div class="align-self-center">
-                                <h4>Becroft</h4>
-                                <h6 class="text-color">web designer</h6>
-                            </div>
-                        </div>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-                    </div>
-                    <!-- team-member -->
-                    <div class="team-member">
-                        <div class="d-flex mb-4">
-                            <div class="mr-3">
-                                <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-2.jpg" alt="team-member">
-                            </div>
-                            <div class="align-self-center">
-                                <h4>John Doe</h4>
-                                <h6 class="text-color">web developer</h6>
-                            </div>
-                        </div>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-                    </div>
-                    <!-- team-member -->
-                    <div class="team-member">
-                        <div class="d-flex mb-4">
-                            <div class="mr-3">
-                                <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-3.jpg" alt="team-member">
-                            </div>
-                            <div class="align-self-center">
-                                <h4>Erik Ligas</h4>
-                                <h6 class="text-color">Programmer</h6>
-                            </div>
-                        </div>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                            the blind texts. S eparated they</p>
-                    </div>
-                    <!-- team-member -->
-                    <div class="team-member">
-                        <div class="d-flex mb-4">
-                            <div class="mr-3">
-                                <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-1.jpg" alt="team-member">
-                            </div>
-                            <div class="align-self-center">
-                                <h4>Erik Ligas</h4>
-                                <h6 class="text-color">Programmer</h6>
-                            </div>
-                        </div>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                            the blind texts. S eparated they</p>
-                    </div>
-                    <!-- team-member -->
-                    <div class="team-member">
-                        <div class="d-flex mb-4">
-                            <div class="mr-3">
-                                <img class="rounded-circle img-fluid" src="{{ asset('frontend-assets') }}/images/team/team-2.jpg" alt="team-member">
-                            </div>
-                            <div class="align-self-center">
-                                <h4>John Doe</h4>
-                                <h6 class="text-color">web developer</h6>
-                            </div>
-                        </div>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-                    </div>
+                <div class="col-md-5 wordpressDiv">
+                    <h2 class="section-title">Our Latest Modern WordPress Projects</h2>
+                    <p class="mb-30">Softdivz WordPress Websites offers expert WordPress development, creating fully customized, responsive, and feature-rich websites. We design user-friendly sites that are easy to manage and optimized for performance, tailored to your brand's needs. Trust Softdivz for professional WordPress solutions.</p>
+                    <ul class="pl-0 service-list">
+                        <li class="text-white"><i class="ti-layout-tab-window text-purple"></i>Bold and Modern Designed Websites</li>
+                        <li class="text-white"><i class="ti-layout-placeholder text-purple"></i>Secure and Fast</li>
+                        <li class="text-white"><i class="ti-support text-purple"></i>Using Only Elementor making the site Lighter</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -327,46 +220,62 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-title">Our Pricing</h2>
-                    <p class="mb-50">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu <br>
-                        fugiat nulla pariatur. Excepteur sint occaecat </p>
+                    <p class="mb-50">We Offer services for our clients to maintaning their site . We provide our Developer , Graphics Designer, SEO experts to help with our clients grow their online buisness. We also keep our pricings reasonalble to our clients so that our clients dont have to hire or go to agency for doing their work with double the amount.</p>
+                    <div class="d-none d-md-block">
+                    <div class="tab-pane d-flex justify-content-center w-100" >
+                        @foreach ($pricings as $index => $pricing)
+                            <div class="col-md-3 d-flex">
+                                <div class="d-flex flex-column justify-content-between rounded text-left pricing-table table-1 h-100">
+                                    <h5 class="mb-3"> <i class="fa-solid fa-circle mr-2" style="font-size: 10px"></i> {{ $pricing->title }}</h5>
+                                    <h2 class="mb-3"><span>${{ $pricing->price }}</span></h2>
+                                    <p class="mb-3">{{$pricing->desc}}
+                                    </p>
+                                    @foreach (explode(',', $pricing->services) as $Info)
+                                        <p> <i class="fa-solid fa-circle mr-2" style="font-size: 10px"></i> {{ $Info }}</p>
+                                    @endforeach
+
+                                    <a href="#" class="btn pricing-btn mt-3 px-2">Get Started</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    </div>
                 </div>
-                <div class="col-lg-10 mx-auto">
+                <div class="col-lg-10 mx-auto d-block d-md-none">
                     <div class="row justify-content-center">
-                        <!-- pricing table -->
-                        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                            <div class="rounded text-center pricing-table table-1">
-                                <h3>Free</h3>
-                                <h1><span>$</span>00</h1>
-                                <p>Far far away, behind the
-                                    wordmountains, far from the
-                                    countries Vokalia and
-                                </p>
-                                <a href="#" class="btn pricing-btn px-2">Get Started</a>
-                            </div>
-                        </div>
-                        <!-- pricing table -->
-                        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                            <div class="rounded text-center pricing-table table-2">
-                                <h3>Standard</h3>
-                                <h1><span>$</span>75</h1>
-                                <p>Far far away, behind the
-                                    wordmountains, far from the
-                                    countries Vokalia and
-                                </p>
-                                <a href="#" class="btn pricing-btn px-2">Buy Now</a>
-                            </div>
-                        </div>
-                        <!-- pricing table -->
-                        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                            <div class="rounded text-center pricing-table table-3">
-                                <h3>Premium</h3>
-                                <h1><span>$</span>99</h1>
-                                <p>Far far away, behind the
-                                    wordmountains, far from the
-                                    countries Vokalia and
-                                </p>
-                                <a href="#" class="btn pricing-btn px-2">Buy Now</a>
-                            </div>
+                        <div class="container">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs d-flex justify-content-center column-gap-3 row-gap-3" id="myTab" role="tablist">
+                                @foreach ($pricings as $index => $pricing)
+                                  <li class="nav-item" role="presentation">
+                                    <a class="nav-link @if($index == 0) active @endif" id="pricing-tab{{ $pricing->id }}" data-bs-toggle="tab" href="#pricing{{ $pricing->id }}" role="tab" aria-controls="pricing{{ $pricing->id }}" aria-selected="{{ $index == 0 ? 'true' : 'false' }}">{{ $pricing->title }}</a>
+                                  </li>
+                                @endforeach
+                              </ul>
+
+                              <!-- Tab panes -->
+                              <div class="tab-content mt-4" id="myTabContent">
+                                @foreach ($pricings as $index => $pricing)
+                                  <div class="tab-pane fade @if($index == 0) show active @endif" id="pricing{{ $pricing->id }}" role="tabpanel" aria-labelledby="pricing-tab{{ $pricing->id }}">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                                            <div class="rounded pricing-table table-1">
+                                                <h5 class="mb-3"> <i class="fa-solid fa-circle mr-2" style="font-size: 10px"></i> {{ $pricing->title }}</h5>
+                                                <h2 class="mb-3"><span>${{ $pricing->price }}</span></h2>
+                                                <p class="mb-3">{{$pricing->desc}}
+                                                </p>
+                                                @foreach (explode(',', $pricing->services) as $Info)
+                                                <p> <i class="fa-solid fa-circle mr-2" style="font-size: 10px"></i> {{ $Info }}</p>
+                                                @endforeach
+
+                                                <a href="#" class="btn pricing-btn text-center w-100 mt-3 px-2">Get Started</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                @endforeach
+                              </div>
+
                         </div>
                     </div>
                 </div>
@@ -382,17 +291,11 @@
     <!-- client logo slider -->
     <section class="section">
         <div class="container">
+            <h2 class="section-title text-center mb-0">Our Clients</h2>
             <div class="client-logo-slider align-self-center">
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-                <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend-assets') }}/images/clients-logo/client-logo-5.png" alt="client-logo"></a>
+                @foreach ($clients as $client )
+                <a href="" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset( $client->image ) }}" alt="client-logo"></a>
+                @endforeach
             </div>
         </div>
     </section>
@@ -403,16 +306,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Subscribe to our newsletter</h2>
-                    <p class="mb-5">Receive updates, news and deals</p>
+                    <h2>Hear What Our Clients Say About Us !</h2>
+                    <p class="mb-5">We help our clients to meet their required requiremnts within their deadline. We also keep a good professional Reation with our client.</p>
                 </div>
-                <div class="col-lg-8 col-sm-10 col-12 mx-auto">
-                    <form action="#">
-                        <div class="input-wrapper position-relative">
-                            <input type="email" class="newsletter-form" id="newsletter" placeholder="Enter your email">
-                            <button type="submit" value="send" class="btn newsletter-btn">subscribe</button>
-                        </div>
-                    </form>
+                <div class="col-md-8 mx-auto MobileMarLeft">
+                    <div class="Testimonialwrapper">
+                        <i id="testimonialleft" class="fa-solid fas fa-angle-left"></i>
+                        <ul class="Testimonialcarousel">
+                            @foreach ($testimonials as $testimonial)
+                            <li class="Testimonialcard p-2 h-100">
+                                <div class="TestimonialcardInner h-100">
+                                    <div class="testimonial-item d-flex justify-content-start column-gap-3 w-100">
+                                        <div class="w-30 img">
+                                            <img src="{{ asset($testimonial->image) }}" class="d-block" alt="Testimonial Image">
+                                        </div>
+                                        <div class="w-70 text-left">
+                                            <p class="mb-0">{{ $testimonial->name }}</p>
+                                            <p class="textDesc"> {{ $testimonial->title }},{{ $testimonial->company }}</p>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3">{{ $testimonial->desc }}</p>
+                                </div>
+                            </li>
+                            @endforeach
+                        </ul>
+                        <i id="testimonialright" class="fa-solid fas fa-angle-right"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -425,5 +344,106 @@
 
 
 @section('customJs')
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3.3,   // Show 3 full slides and part of the 4th on large screens
+    spaceBetween: 0,      // No space between slides
+    loop: true,           // Loop the slides
+    slidesPerGroup: 1,    // Slide 1 item at a time
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 5000,      // Auto slide every 5 seconds
+        disableOnInteraction: false, // Continue auto-sliding after interaction
+    },
+    breakpoints: {
+        // Adjust the number of slides per view for different screen sizes
+        768: {
+            slidesPerView: 3.3,   // For tablets and above
+            slidesPerGroup: 1,    // Slide 1 item at a time
+        },
+        320: {
+            slidesPerView: 1.1,   // For mobile devices, show 1 full slide and part of the next
+            slidesPerGroup: 1,    // Slide 1 item at a time
+        },
+    },
+});
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector(".Testimonialcarousel");
+    const leftBtn = document.getElementById("testimonialleft");
+    const rightBtn = document.getElementById("testimonialright");
+    const wrapper = document.querySelector(".Testimonialwrapper");
+
+    const firstCard = carousel.querySelector(".Testimonialcard");
+    const cardWidth = firstCard.offsetWidth;
+
+    let isDragging = false,
+        startX,
+        startScrollLeft,
+        timeoutId;
+
+    const dragStart = (e) => {
+        isDragging = true;
+        carousel.classList.add("dragging");
+        startX = e.pageX;
+        startScrollLeft = carousel.scrollLeft;
+    };
+
+    const dragging = (e) => {
+        if (!isDragging) return;
+
+        const newScrollLeft = startScrollLeft - (e.pageX - startX);
+        carousel.scrollLeft = newScrollLeft;
+    };
+
+    const dragStop = () => {
+        isDragging = false;
+        carousel.classList.remove("dragging");
+    };
+
+    const autoPlay = () => {
+        if (window.innerWidth < 800) return;
+
+        timeoutId = setTimeout(() => {
+            carousel.scrollLeft += cardWidth;
+
+            if (carousel.scrollLeft >= carousel.scrollWidth - carousel.offsetWidth) {
+                carousel.scrollLeft = 0;
+            }
+            autoPlay();  // Continue the autoplay loop
+        }, 2500);
+    };
+
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+    wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+    wrapper.addEventListener("mouseleave", autoPlay);
+
+    // Event listeners for the left and right buttons
+    leftBtn.addEventListener("click", () => {
+        carousel.scrollLeft -= cardWidth;
+    });
+
+    rightBtn.addEventListener("click", () => {
+        carousel.scrollLeft += cardWidth;
+    });
+
+    // Start autoplay on load
+    autoPlay();
+});
+
+</script>
 @endsection

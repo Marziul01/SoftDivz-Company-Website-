@@ -149,13 +149,13 @@
                 <li class="icons dropdown">
                     <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
                         <span class="activity active"></span>
-                        <img src="{{ asset('admin-assets') }}/images/user/1.png" height="40" width="40" alt="">
+                        <img src="{{ asset($siteSettings->favicon) }}" height="40" width="40" alt="">
                     </div>
                     <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                         <div class="dropdown-content-body">
                             <ul>
                                 <li>
-                                    <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                    <a href="{{ route('profile') }}"><i class="icon-user"></i> <span>Profile</span></a>
                                 </li>
                                 <li>
                                     <a href="javascript:void()">
@@ -164,10 +164,8 @@
                                 </li>
 
                                 <hr class="my-2">
-                                <li>
-                                    <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                </li>
-                                <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+
+                                <li><a href="{{ route('admin.logout') }}"><i class="icon-key"></i> <span>Logout</span></a></li>
                             </ul>
                         </div>
                     </div>

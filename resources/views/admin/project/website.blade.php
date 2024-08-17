@@ -43,7 +43,7 @@
                                 <th>Image</th>
                                 <th>Website Type</th>
                                 <th>Name</th>
-                                <th>Demo Link</th>
+                                <th>Demo Link</th> 
                                 <th>Desc</th>
                                 <th>Status</th>
                                 <th>Actions</th>
