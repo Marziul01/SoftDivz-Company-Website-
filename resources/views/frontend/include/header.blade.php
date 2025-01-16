@@ -9,22 +9,22 @@
             <!-- navbar -->
             <div class="collapse navbar-collapse text-center" id="navbar">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="nav-item {{ Route::currentRouteName() == 'home' ? 'active' : ''  }}" >
                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Route::currentRouteName() == 'about' ? 'active' : ''  }}">
                         <a class="nav-link page-scroll" href="{{ route('about') }}">About us</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Route::currentRouteName() == 'projects' ? 'active' : ''  }}">
                         <a class="nav-link" href="{{ route('projects') }}">Projects</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Route::currentRouteName() == 'services' ? 'active' : ''  }}">
                         <a class="nav-link" href="{{ route('services') }}">Services</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Route::currentRouteName() == 'home/#pricing' ? 'active' : ''  }}">
                         <a class="nav-link page-scroll" href="{{ route('home') }}/#pricing">Pricing</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Route::currentRouteName() == 'contact' ? 'active' : ''  }}">
                         <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                     </li>
                 </ul>

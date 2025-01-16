@@ -297,7 +297,10 @@
     color: #6a6d78;
     font-size: 1.31rem;
 }
-
+.nav-item.active .nav-link{
+    color: #42e0e1 !important;
+    font-weight: 600;
+}
 
 
 @media (min-width: 767px) {
@@ -430,6 +433,22 @@
     }
     .navbar-collapse{
         background-color: currentColor;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        color: white;
+        text-align: left;
+        padding: 10px 20px;
+        border: 1px solid azure;
+        margin: 10px 10px;
+        border-radius: 10px;
+    }
+    .mobileButton{
+        width: 100%;
+    }
+    .nav-item.active .nav-link{
+        border-color: #42e0e1 !important;
+        background-color: #42e0e1 !important;
+        color: azure !important;
     }
 }
 
