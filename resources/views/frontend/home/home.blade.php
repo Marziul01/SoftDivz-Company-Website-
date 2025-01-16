@@ -12,8 +12,8 @@
             <div class="row">
                 <div class="col-lg-12 text-center zindex-1 HeroSection">
                     <div class="HeroHeadingDiv">
-                        <h1 class="mb-3 mainHeroHeader">Empower Your Business with Innovative Software, Stunning Websites, and Reliable Maintenance!
-                            </h1>
+                        <h1 class="mb-3 mainHeroHeader">Empower Your Business with Innovative Software, Stunning Websites, and Reliable Maintenance!</h1>
+                        <img class="img-fluid w-100" src="{{ asset('frontend-assets') }}/images/hero-area/banner-img.png" alt="banner-img">
                         <p class="mb-4 mainHraderP"> At SoftDivz we automate your operations and fuel your growth, ensuring you stay ahead in the competitive market. Let us transform your business with innovative solutions designed for success!"</p>
                         <a href="#" class="btn btn-secondary w-50 mainHeaderbtn">Our Projects <i class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
@@ -25,12 +25,12 @@
         </div>
         <!-- background shapes -->
         <div id="scene">
-            <img class="img-fluid hero-bg-1 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/feature-bg-2.png" alt="">
-            <img class="img-fluid hero-bg-2 left-right-animation" src="{{ asset('frontend-assets') }}/images/background-shape/seo-ball-1.png" alt="">
-            <img class="img-fluid hero-bg-3 left-right-animation" src="{{ asset('frontend-assets') }}/images/background-shape/seo-half-cycle.png" alt="">
-            <img class="img-fluid hero-bg-4 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/green-dot.png" alt="">
-            <img class="img-fluid hero-bg-5 left-right-animation" src="{{ asset('frontend-assets') }}/images/background-shape/blue-half-cycle.png" alt="">
-            <img class="img-fluid hero-bg-6 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/seo-ball-1.png" alt="">
+            <img class="img-fluid hero-bg-1 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/php.png" alt="">
+            <img class="img-fluid hero-bg-2 left-right-animation" src="{{ asset('frontend-assets') }}/images/background-shape/Laravel.png" alt="">
+            <img class="img-fluid hero-bg-3 left-right-animation" src="{{ asset('frontend-assets') }}/images/background-shape/js.png" alt="">
+            <img class="img-fluid hero-bg-4 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/vue.png" alt="">
+            <img class="img-fluid hero-bg-5 left-right-animation" src="{{ asset('frontend-assets') }}/images/background-shape/html.png" alt="">
+            <img class="img-fluid hero-bg-6 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/css.webp" alt="">
             <img class="img-fluid hero-bg-7 left-right-animation" src="{{ asset('frontend-assets') }}/images/background-shape/yellow-triangle.png" alt="">
             <img class="img-fluid hero-bg-8 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/service-half-cycle.png" alt="">
             <img class="img-fluid hero-bg-9 up-down-animation" src="{{ asset('frontend-assets') }}/images/background-shape/team-bg-triangle.png" alt="">

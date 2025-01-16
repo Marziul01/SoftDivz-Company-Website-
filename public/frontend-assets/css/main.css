@@ -301,7 +301,9 @@
     color: #42e0e1 !important;
     font-weight: 600;
 }
-
+.HeroHeadingDiv img{
+    display: none;
+}
 
 @media (min-width: 767px) {
     .normalHeader{
@@ -334,7 +336,7 @@
         width: 35%;
     }
     .hero-section {
-        padding-top: 160px;
+        padding-top: 120px;
         padding-bottom: 0px;
     }
     .navbar-light .navbar-toggler-icon {
@@ -342,7 +344,7 @@
         transform: rotate(-180deg);
     }
     .mainHeroHeader{
-        font-size: 40px;
+        font-size: 25px;
         text-align: center;
     }
     .section{
@@ -444,11 +446,19 @@
     }
     .mobileButton{
         width: 100%;
+        margin-top: 10px;
     }
     .nav-item.active .nav-link{
         border-color: #42e0e1 !important;
         background-color: #42e0e1 !important;
         color: azure !important;
+    }
+    .HeroHeadingDiv img{
+        display: block;
+        margin: 20px 0;
+    }
+    .HeroImageDiv{
+        display: none;
     }
 }
 
