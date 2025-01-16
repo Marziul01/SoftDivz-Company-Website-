@@ -325,7 +325,7 @@
         width: 80%;
     }
     .navbar-brand img{
-        width: 50%;
+        width: 40%;
     }
     .nav-bg .normalHeader .navbar-brand img{
         width: 35%;
@@ -335,7 +335,7 @@
         padding-bottom: 0px;
     }
     .navbar-light .navbar-toggler-icon {
-        background-image: url("/public/frontend-assets/images/menu.png") !important;
+        background-image: url("../images/menu.png") !important;
         transform: rotate(-180deg);
     }
     .mainHeroHeader{
@@ -363,7 +363,7 @@
     }
     .navbar-toggler{
         background: azure;
-        padding: 10px;
+        padding: 6px;
     }
     .mainHeaderbtn{
         padding: 15px 0px !important;
@@ -423,6 +423,13 @@
     }
     .footer .logo img{
         width: 40%;
+    }
+    .row{
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+    .navbar-collapse{
+        background-color: currentColor;
     }
 }
 
