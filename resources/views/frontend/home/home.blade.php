@@ -13,12 +13,12 @@
                 <div class="col-lg-12 text-center zindex-1 HeroSection">
                     <div class="HeroHeadingDiv">
                         <h1 class="mb-3 mainHeroHeader">Empower Your Business with Innovative Software, Stunning Websites, and Reliable Maintenance!</h1>
-                        <img class="img-fluid w-100" src="{{ asset('frontend-assets') }}/images/hero-area/banner-img.png" alt="banner-img">
+                        <img class="img-fluid w-100" src="{{ asset('frontend-assets') }}/images/sites.gif" alt="banner-img">
                         <p class="mb-4 mainHraderP"> At SoftDivz we automate your operations and fuel your growth, ensuring you stay ahead in the competitive market. Let us transform your business with innovative solutions designed for success!"</p>
                         <a href="#" class="btn btn-secondary w-50 mainHeaderbtn">Our Projects <i class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
                     <div class="HeroImageDiv">
-                        <img class="img-fluid w-100" src="{{ asset('frontend-assets') }}/images/hero-area/banner-img.png" alt="banner-img">
+                        <img class="img-fluid w-100" src="{{ asset('frontend-assets') }}/images/sites.gif" alt="banner-img">
                     </div>
                 </div>
             </div>
